@@ -22,15 +22,15 @@ class _HomeState extends State<Home> {
     });
   }
 
-  void _calculaCombustivelIdeal() {
+  void _getIdealFuel() {
     setState(() {
       double vEtanol = double.parse(etanolController.text.replaceAll(',', '.'));
       double vGasolina =
           double.parse(gasolinaController.text.replaceAll(',', '.'));
-      double proporcao = vEtanol / vGasolina;
+      double proportion = vEtanol / vGasolina;
 
       _resultado =
-          (proporcao < 0.7) ? "Abasteça com Álcool" : "Abasteça com Gasolina!";
+          (proportion < 0.7) ? "Abasteça com Álcool" : "Abasteça com Gasolina!";
     });
   }
 
@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
                               fontSize: 24, fontWeight: FontWeight.w400)),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          _calculaCombustivelIdeal();
+                          _getIdealFuel();
                         }
                       },
                       child: const Text(
