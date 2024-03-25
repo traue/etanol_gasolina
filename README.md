@@ -1,2 +1,3 @@
-# etanol_gasolina
-Projeto desenvolvido com Flutter para o WTT 2024.1 - Oficina de Flutter - Universidade Presbiteriana Mackenzie
+# Etanol - Gasolina
+
+A Flutter project for WTT 2024.1 - Universidade Presbiteriana Mackenzie
