@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
       double proportion = vEtanol / vGasolina;
 
       _resultado =
-          (proportion < 0.7) ? "Abasteça com Álcool" : "Abasteça com Gasolina!";
+          (proportion < 0.7) ? "Abasteça com Etanol" : "Abasteça com Gasolina!";
     });
   }
 
@@ -39,13 +39,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Álcool ou Gasolina?",
+            "Etanol ou Gasolina?",
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,
           backgroundColor: Colors.lightBlue[900],
           actions: <Widget>[
             IconButton(
+                color: Colors.white,
                 icon: const Icon(Icons.refresh),
                 onPressed: () {
                   _reset();
@@ -70,13 +71,13 @@ class _HomeState extends State<Home> {
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Informe o valor do Álcool!";
+                      return "Informe o valor do Etanol!";
                     } else {
                       return null;
                     }
                   },
                   decoration: InputDecoration(
-                    labelText: "Valor do Álcool",
+                    labelText: "Valor do Etanol",
                     labelStyle: TextStyle(color: Colors.lightBlue[900]),
                   ),
                   style:
@@ -105,6 +106,9 @@ class _HomeState extends State<Home> {
                     height: 50.0,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                           backgroundColor: Colors.blue[900],
                           textStyle: const TextStyle(
                               fontSize: 24, fontWeight: FontWeight.w400)),
